@@ -10,7 +10,7 @@
 [![GitHub license](https://img.shields.io/github/license/dbelz/Horrible-Subs-Fetcher.svg?longCache=true&style=flat-square)](https://github.com/dbelz/Horrible-Subs-Fetcher/blob/master/LICENSE.md)
 
 
-This is a simple library which is able to search, fetch and parse the xdcc packlist from https://xdcc.horriblesubs.info/
+This is a simple library which is able to search, fetch and parse the xdcc packlist of https://xdcc.horriblesubs.info/
 </div><br>
 
 # How to use it?
