@@ -2,6 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Daniel Belz</Authors>
+    <Product>Horrible-Subs-Fetcher</Product>
+    <Description>Simple library which is able to search, fetch and parse the xdcc packlist of https://xdcc.horriblesubs.info/</Description>
+    <Copyright>Daniel Belz</Copyright>
+    <PackageProjectUrl>https://github.com/dbelz/Horrible-Subs-Fetcher/blob/master/LICENSE.md</PackageProjectUrl>
+    <PackageTags>anime fetcher horrible subs horrible-subs packlist xdcc download parsing parse</PackageTags>
+    <RepositoryUrl>https://github.com/dbelz/Horrible-Subs-Fetcher</RepositoryUrl>
+    <PackageLicenseUrl>https://github.com/dbelz/Horrible-Subs-Fetcher</PackageLicenseUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
