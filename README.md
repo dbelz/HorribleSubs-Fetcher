@@ -7,7 +7,7 @@
 
 [![GitHub last commit](https://img.shields.io/github/last-commit/dbelz/Horrible-Subs-Fetcher.svg?longCache=true&style=flat-square)](https://github.com/dbelz/Horrible-Subs-Fetcher)
 [![GitHub issues](https://img.shields.io/github/issues/dbelz/Horrible-Subs-Fetcher.svg?longCache=true&style=flat-square)](https://github.com/dbelz/Horrible-Subs-Fetcher/issues)
-[![GitHub license](https://img.shields.io/github/license/dbelz/Horrible-Subs-Fetcher/Horrible-Subs-Fetcher.svg?longCache=true&style=flat-square)](https://github.com/dbelz/Horrible-Subs-Fetcher/blob/master/LICENSE.md)
+[![GitHub license](https://img.shields.io/github/license/dbelz/Horrible-Subs-Fetcher.svg?longCache=true&style=flat-square)](https://github.com/dbelz/Horrible-Subs-Fetcher/blob/master/LICENSE.md)
 
 
 This is a simple library which is able to search, fetch and parse the xdcc packlist from https://xdcc.horriblesubs.info/
