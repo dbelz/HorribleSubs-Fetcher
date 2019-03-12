@@ -18,7 +18,7 @@ You can search for xdcc packs like this:
 ```csharp
 public async Task FindToradoraPacksAsync()
 {
-	var fetcher = new Fetcher();
+    var fetcher = new Fetcher();
     var cancellationTokenSource = new CancellationTokenSource();
 
     var packs = await fetcher.SearchPacklistAsync("Tokyo Ghoul", cancellationTokenSource.Token);
@@ -29,15 +29,15 @@ The `PackEntry` class overrides the `ToString()` method. It returns a string whi
 ```csharp
 public async Task FindToradoraPacksAsync()
 {
-	var fetcher = new Fetcher();
+    var fetcher = new Fetcher();
     var cancellationTokenSource = new CancellationTokenSource();
 
     var packs = await fetcher.SearchPacklistAsync("Tokyo Ghoul", cancellationTokenSource.Token);
 
-	var firstPack = packs.First();
+    var firstPack = packs.First();
 
-	// returns: /msg $BOT$ xdcc send #$PACKNUMBER$
-	Console.WriteLine(firstPack);
+    // returns: /msg $BOT$ xdcc send #$PACKNUMBER$
+    Console.WriteLine(firstPack);
 }
 ```
 
