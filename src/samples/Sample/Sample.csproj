@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\HorribleSubsFetcher\HorribleSubsFetcher.csproj" />
+    <ProjectReference Include="..\..\HorribleSubsFetcher\HorribleSubsFetcher.csproj" />
   </ItemGroup>
 
 </Project>

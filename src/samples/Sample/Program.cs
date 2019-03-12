@@ -3,14 +3,14 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ConsoleAppSample
+namespace Sample
 {
     class Program
     {
         static async Task Main(string[] args)
         {
             var fetcher = new Fetcher();
-            var results = await fetcher.SearchPacklistAsync("Overlord", CancellationToken.None);
+            var results = await fetcher.SearchPacklistAsync("Tokyo Ghoul", CancellationToken.None);
 
             Console.ReadLine();
         }
