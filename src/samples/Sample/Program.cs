@@ -13,11 +13,13 @@ namespace Sample
             var fetcher = new Fetcher();
             var cancellationTokenSource = new CancellationTokenSource();
 
-            var packs = await fetcher.SearchPacklistAsync("Toradora", cancellationTokenSource.Token);
+           var bots = await fetcher.GetBotsAsync(CancellationToken.None);
+
+            /* var packs = await fetcher.SearchPacklistAsync("Toradora", cancellationTokenSource.Token);
 
             var firstPack = packs.First();
 
-            Console.WriteLine(firstPack);
+            Console.WriteLine(firstPack); */
 
             Console.ReadLine();
         }

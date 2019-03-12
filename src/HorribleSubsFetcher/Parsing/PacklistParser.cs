@@ -4,16 +4,16 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace HorribleSubsFetcher
+namespace HorribleSubsFetcher.Parsing
 {
-    internal class ResponseParser
+    internal static class PacklistParser
     {
-        public async Task<IEnumerable<PackEntry>> Parse(
-            Stream responseStream,
+        internal static async Task<IEnumerable<PackEntry>> ParseAsync(
+            Stream stream,
             CancellationToken token)
         {
             var result = new List<PackEntry>();
-            var reader = new StreamReader(responseStream);
+            var reader = new StreamReader(stream);
 
             string line = await reader.ReadLineAsync();
 
@@ -30,7 +30,7 @@ namespace HorribleSubsFetcher
             return result;
         }
 
-        private PackEntry ExtractPack(string line)
+        internal static PackEntry ExtractPack(string line)
         {
             var lineSplitted = line.Split('=');
 
