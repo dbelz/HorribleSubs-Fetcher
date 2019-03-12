@@ -13,6 +13,34 @@
 This is a simple library which is able to search, fetch and parse the xdcc packlist from https://xdcc.horriblesubs.info/
 </div><br>
 
+# How to use it?
+You can search for xdcc packs like this:
+```csharp
+public async Task FindToradoraPacksAsync()
+{
+	var fetcher = new Fetcher();
+    var cancellationTokenSource = new CancellationTokenSource();
+
+    var packs = await fetcher.SearchPacklistAsync("Tokyo Ghoul", cancellationTokenSource.Token);
+}
+```
+
+The `PackEntry` class overrides the `ToString()` method. It returns a string which can be copy pasted in your favorite irc/xdcc client:
+```csharp
+public async Task FindToradoraPacksAsync()
+{
+	var fetcher = new Fetcher();
+    var cancellationTokenSource = new CancellationTokenSource();
+
+    var packs = await fetcher.SearchPacklistAsync("Tokyo Ghoul", cancellationTokenSource.Token);
+
+	var firstPack = packs.First();
+
+	// returns: /msg $BOT$ xdcc send #$PACKNUMBER$
+	Console.WriteLine(firstPack);
+}
+```
+
 
 ## Contributing
 
