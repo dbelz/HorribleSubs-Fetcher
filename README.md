@@ -6,7 +6,7 @@
 [![forthebadge](https://forthebadge.com/images/badges/you-didnt-ask-for-this.svg)](https://forthebadge.com)
 
 [![GitHub license](https://img.shields.io/github/license/dbelz/Horrible-Subs-Fetcher.svg?longCache=true&style=flat-square)](https://github.com/dbelz/Horrible-Subs-Fetcher/blob/master/LICENSE.md)
-[![Nuget](https://img.shields.io/nuget/v/Horrible-Subs-Fetcher.svg?style=flat-square)](https://www.nuget.org/packages/HorribleSubsFetcher/)
+[![Nuget](https://img.shields.io/nuget/v/HorribleSubsFetcher.svg?style=flat-square)](https://www.nuget.org/packages/HorribleSubsFetcher/)
 [![GitHub last commit](https://img.shields.io/github/last-commit/dbelz/Horrible-Subs-Fetcher.svg?longCache=true&style=flat-square)](https://github.com/dbelz/Horrible-Subs-Fetcher)
 [![GitHub issues](https://img.shields.io/github/issues/dbelz/Horrible-Subs-Fetcher.svg?longCache=true&style=flat-square)](https://github.com/dbelz/Horrible-Subs-Fetcher/issues)
 
