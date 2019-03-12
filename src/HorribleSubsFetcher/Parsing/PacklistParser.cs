@@ -8,11 +8,11 @@ namespace HorribleSubsFetcher.Parsing
 {
     internal static class PacklistParser
     {
-        internal static async Task<IEnumerable<PackEntry>> ParseAsync(
+        internal static async Task<IEnumerable<Pack>> ParseAsync(
             Stream stream,
             CancellationToken token)
         {
-            var result = new List<PackEntry>();
+            var result = new List<Pack>();
             var reader = new StreamReader(stream);
 
             string line = await reader.ReadLineAsync();
@@ -30,7 +30,7 @@ namespace HorribleSubsFetcher.Parsing
             return result;
         }
 
-        internal static PackEntry ExtractPack(string line)
+        internal static Pack ExtractPack(string line)
         {
             var lineSplitted = line.Split('=');
 
@@ -42,7 +42,7 @@ namespace HorribleSubsFetcher.Parsing
             if (json.EndsWith(";"))
                 json = json.Substring(0, json.Length - 1);
 
-            return JsonConvert.DeserializeObject<PackEntry>(json);
+            return JsonConvert.DeserializeObject<Pack>(json);
         }
     }
 }

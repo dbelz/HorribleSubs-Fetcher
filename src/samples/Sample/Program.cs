@@ -10,10 +10,10 @@ namespace Sample
     {
         static async Task Main(string[] args)
         {
-            var fetcher = new Fetcher();
+            var horribleSubsFetchApi = new FetchApi();
             var cancellationTokenSource = new CancellationTokenSource();
 
-           var bots = await fetcher.GetBotsAsync(CancellationToken.None);
+           var bots = await horribleSubsFetchApi.GetBotlistAsync(CancellationToken.None);
 
             /* var packs = await fetcher.SearchPacklistAsync("Toradora", cancellationTokenSource.Token);
 

@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace HorribleSubsFetcher
 {
-    public class Fetcher : IDisposable
+    public class FetchApi : IDisposable
     {
         private const string BASE_URL = "https://xdcc.horriblesubs.info/";
         private const string SEARCH_URL_SKELETON = "https://xdcc.horriblesubs.info/search.php?t={0}";
 
         private readonly HttpClient _http;
 
-        public Fetcher(HttpClient sharedHttpClient = null)
+        public FetchApi(HttpClient sharedHttpClient = null)
         {
             if (sharedHttpClient != null)
                 _http = sharedHttpClient;
@@ -22,7 +22,7 @@ namespace HorribleSubsFetcher
                 _http = new HttpClient();
         }
 
-        public async Task<IEnumerable<PackEntry>> SearchPacklistAsync(
+        public async Task<IEnumerable<Pack>> SearchPacklistAsync(
             string term,
             CancellationToken token)
         {
@@ -35,7 +35,18 @@ namespace HorribleSubsFetcher
             return await PacklistParser.ParseAsync(stream, token);
         }
 
-        public async Task<IEnumerable<string>> GetBotsAsync(
+        public async Task<IEnumerable<Pack>> GetPacklistAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<IEnumerable<Pack>> GetPacklistAsync(
+            string bot)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<IEnumerable<string>> GetBotlistAsync(
             CancellationToken token)
         {
             var stream = await _http.GetStreamAsync(BASE_URL);
