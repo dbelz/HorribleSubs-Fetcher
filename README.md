@@ -11,6 +11,8 @@
 [![GitHub issues](https://img.shields.io/github/issues/dbelz/Horrible-Subs-Fetcher.svg?longCache=true&style=flat-square)](https://github.com/dbelz/Horrible-Subs-Fetcher/issues)
 
 This is a simple library which is able to search, fetch and parse the xdcc packlist of https://xdcc.horriblesubs.info/
+
+<sub>Built with ❤︎ by Daniel Belz</sub>
 </div><br>
 
 # How to use it?
