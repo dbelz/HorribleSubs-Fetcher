@@ -8,7 +8,7 @@ namespace HorribleSubsFetcher.Parsing
 {
     internal static class PacklistParser
     {
-        internal static async Task<IEnumerable<Pack>> ParseAsync(
+        internal async Task<IEnumerable<Pack>> ParseAsync(
             Stream stream,
             CancellationToken token)
         {

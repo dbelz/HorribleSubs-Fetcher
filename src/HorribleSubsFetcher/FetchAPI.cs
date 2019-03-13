@@ -13,6 +13,7 @@ namespace HorribleSubsFetcher
         private const string SEARCH_URL_SKELETON = "https://xdcc.horriblesubs.info/search.php?t={0}";
 
         private readonly HttpClient _http;
+        private readonly Parser _parser;
 
         public FetchApi(HttpClient sharedHttpClient = null)
         {
@@ -32,7 +33,7 @@ namespace HorribleSubsFetcher
             var uri = string.Format(SEARCH_URL_SKELETON, term);
             var stream = await _http.GetStreamAsync(uri);
 
-            return await PacklistParser.ParseAsync(stream, token);
+            return await _parser.ParsePacklistAsync(stream, token);
         }
 
         public async Task<IEnumerable<Pack>> GetPacklistAsync()
@@ -46,11 +47,11 @@ namespace HorribleSubsFetcher
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<string>> GetBotlistAsync(
+        public async Task<IEnumerable<string>> GetBotsAsync(
             CancellationToken token)
         {
             var stream = await _http.GetStreamAsync(BASE_URL);
-            return await BotlistParser.ParseAsync(stream, token);
+            return await _parser.ParseBotsAsync(stream, token);
         }
 
         public void Dispose()

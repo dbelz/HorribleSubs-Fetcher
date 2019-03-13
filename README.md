@@ -1,4 +1,4 @@
-<h1 align="center">Horrible Subs Fetcher</h1>
+﻿<h1 align="center">Horrible Subs Fetcher</h1>
 <div align="center">
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-c-sharp.svg)](https://forthebadge.com)
