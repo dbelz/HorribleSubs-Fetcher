@@ -21,6 +21,8 @@ namespace HorribleSubsFetcher
                 _http = sharedHttpClient;
             else
                 _http = new HttpClient();
+
+            _parser = new Parser();
         }
 
         public async Task<IEnumerable<Pack>> SearchPacklistAsync(
