@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{B5EE
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HorribleSubsFetcher", "src\HorribleSubsFetcher\HorribleSubsFetcher.csproj", "{ABBF21DF-081F-4BC9-9C38-4692F558A3D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FetchBots", "samples\FetchBots\FetchBots.csproj", "{7FD48BD5-5C6B-479B-8D68-0EA490778A9E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,9 +25,16 @@ Global
 		{ABBF21DF-081F-4BC9-9C38-4692F558A3D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABBF21DF-081F-4BC9-9C38-4692F558A3D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABBF21DF-081F-4BC9-9C38-4692F558A3D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FD48BD5-5C6B-479B-8D68-0EA490778A9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FD48BD5-5C6B-479B-8D68-0EA490778A9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FD48BD5-5C6B-479B-8D68-0EA490778A9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FD48BD5-5C6B-479B-8D68-0EA490778A9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7FD48BD5-5C6B-479B-8D68-0EA490778A9E} = {B5EEAFD0-3DE4-48EE-8AE3-1494D7BE5206}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {582C7CC2-A753-45BA-B4C4-4D8CC58737D4}
