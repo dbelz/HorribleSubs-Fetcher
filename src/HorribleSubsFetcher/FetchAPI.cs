@@ -10,7 +10,8 @@ namespace HorribleSubsFetcher
     public class FetchApi : IDisposable
     {
         private const string BASE_URL = "https://xdcc.horriblesubs.info/";
-        private const string SEARCH_URL_SKELETON = "https://xdcc.horriblesubs.info/search.php?t={0}";
+        private const string SEARCH_IN_ALL_PACKLISTS_URL = "https://xdcc.horriblesubs.info/search.php?t={0}";
+        private const string SEARCH_IN_BOT_PACKLIST_URL = "https://xdcc.horriblesubs.info/search.php?t={0}&nick={1}";
         private const string BOT_PACKS_URL = "https://xdcc.horriblesubs.info/search.php?nick={0}";
 
         private readonly HttpClient _http;
@@ -34,7 +35,28 @@ namespace HorribleSubsFetcher
         {
             Argument.NotNullOrWhiteSpace(term, nameof(term));
 
-            var uri = string.Format(SEARCH_URL_SKELETON, term);
+            var uri = string.Format(SEARCH_IN_ALL_PACKLISTS_URL, term);
+            var stream = await _http.GetStreamAsync(uri);
+
+            return await _parser.ParsePacklistAsync(stream, token);
+        }
+
+        /// <summary>
+        /// Searches for packs which match the term on a specific bot.
+        /// </summary>
+        /// <param name="term">The search term.</param>
+        /// <param name="bot">The bot.</param>
+        /// <param name="token">The cancellation token which can be used to cancel the operation.</param>
+        /// <returns>A list which contains all matching packs.</returns>
+        public async Task<IEnumerable<Pack>> FindPacksAsync(
+            string term,
+            string bot,
+            CancellationToken token)
+        {
+            Argument.NotNullOrWhiteSpace(term, nameof(term));
+            Argument.NotNullOrWhiteSpace(bot, nameof(bot));
+
+            var uri = string.Format(SEARCH_IN_BOT_PACKLIST_URL, term, bot);
             var stream = await _http.GetStreamAsync(uri);
 
             return await _parser.ParsePacklistAsync(stream, token);
@@ -63,12 +85,12 @@ namespace HorribleSubsFetcher
         }
 
         public async Task<IEnumerable<Pack>> FetchPackListAsync(
-            string botName,
+            string bot,
             CancellationToken token)
         {
-            Argument.NotNullOrWhiteSpace(botName, nameof(botName));
+            Argument.NotNullOrWhiteSpace(bot, nameof(bot));
 
-            var uri = string.Format(BOT_PACKS_URL, botName);
+            var uri = string.Format(BOT_PACKS_URL, bot);
             var stream = await _http.GetStreamAsync(uri);
 
             return await _parser.ParsePacklistAsync(stream, token);

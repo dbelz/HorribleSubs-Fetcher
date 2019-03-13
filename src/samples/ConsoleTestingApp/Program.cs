@@ -13,11 +13,8 @@ namespace ConsoleTestingApp
         {
             var api = new FetchApi();
 
-            var watch = new Stopwatch();
-            watch.Start();
-            var result = await api.FetchPackListAsync(CancellationToken.None);
-            watch.Stop();
-
+            var botList = await api.FetchBotsAsync(CancellationToken.None);
+            var result = await api.FindPacksAsync("Tokyo Ghoul", botList.First(), CancellationToken.None);
             Console.WriteLine("Hello World!");
         }
     }
