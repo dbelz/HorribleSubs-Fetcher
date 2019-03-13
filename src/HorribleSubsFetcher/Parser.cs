@@ -29,55 +29,48 @@ namespace HorribleSubsFetcher
                 stream,
                 token,
                 ParseBot);
-
-            /* var result = new List<string>();
-            var reader = new StreamReader(stream);
-
-            string line = await reader.ReadLineAsync();
-
-            while (!string.IsNullOrWhiteSpace(line) && !token.IsCancellationRequested)
-            {
-                if (line.Contains(BOT_LINE_INDICATOR))
-                {
-                    var bot = ExtractBotName(line);
-                    result.Add(bot);
-                }
-
-                line = await reader.ReadLineAsync();
-            }
-
-            return result; */
         }
 
-        private async Task<IEnumerable<T>> ReadStreamAsync<T>(
+        private static async Task<IEnumerable<T>> ReadStreamAsync<T>(
             Stream stream,
             CancellationToken token,
             Func<string, T> callback)
+
+            where T : class 
         {
             var result = new List<T>();
-            var reader = new StreamReader(stream);
 
-            string line = await reader.ReadLineAsync();
-
-            while (!string.IsNullOrWhiteSpace(line) && !token.IsCancellationRequested)
+            using (var reader = new StreamReader(stream))
             {
-                var value = callback.Invoke(line);
-                result.Add(value);
+                var line = await reader.ReadLineAsync();
 
-                line = await reader.ReadLineAsync();
+                while (!string.IsNullOrWhiteSpace(line) && !token.IsCancellationRequested)
+                {
+                    var value = callback.Invoke(line);
+
+                    if (value != null)
+                        result.Add(value);
+
+                    line = await reader.ReadLineAsync();
+                }
             }
+
+            stream.Dispose();
 
             return result;
         }
 
-        private Pack ParsePack(string input)
+        private static Pack ParsePack(string input)
         {
-            var lineSplitted = input.Split('=');
-
-            if (lineSplitted.Length < 2)
+            if (string.IsNullOrWhiteSpace(input))
                 return null;
 
-            var json = lineSplitted[1];
+            var split = input.Split('=');
+
+            if (split.Length < 2)
+                return null;
+
+            var json = split[1];
 
             if (json.EndsWith(";"))
                 json = json.Substring(0, json.Length - 1);
@@ -85,14 +78,14 @@ namespace HorribleSubsFetcher
             return JsonConvert.DeserializeObject<Pack>(json);
         }
 
-        private string ParseBot(string input)
+        private static string ParseBot(string input)
         {
-            var split = input.Split('\'');
-
-            if (split.Length < 3)
+            if (string.IsNullOrWhiteSpace(input) || !input.Contains(BOT_LINE_INDICATOR))
                 return null;
 
-            return split[1];
+            var split = input.Split('\'');
+
+            return split.Length < 3 ? null : split[1];
         }
     }
 }

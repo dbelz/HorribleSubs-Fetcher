@@ -1,5 +1,7 @@
 ﻿using HorribleSubsFetcher;
 using System;
+using System.Diagnostics;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -10,7 +12,11 @@ namespace ConsoleTestingApp
         static async Task Main(string[] args)
         {
             var api = new FetchApi();
-            var result = await api.SearchPacklistAsync("Toradora", CancellationToken.None);
+
+            var watch = new Stopwatch();
+            watch.Start();
+            var result = await api.FetchPackListAsync(CancellationToken.None);
+            watch.Stop();
 
             Console.WriteLine("Hello World!");
         }
