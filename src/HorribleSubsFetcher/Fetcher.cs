@@ -57,6 +57,8 @@ namespace HorribleSubsFetcher
             Argument.NotNullOrWhiteSpace(term, nameof(term));
             Argument.NotNullOrWhiteSpace(bot, nameof(bot));
 
+            var packList = await FetchBotPackListAsync(bot, token);
+
             var uri = string.Format(SEARCH_IN_BOT_PACKLIST_URL, term, bot);
             var stream = await _http.GetStreamAsync(uri);
 
@@ -68,7 +70,7 @@ namespace HorribleSubsFetcher
         /// </summary>
         /// <param name="token">The cancellation token which can be used to cancel the operation.</param>
         /// <returns>A list which contains all packs.</returns>
-        public async Task<IEnumerable<Pack>> FetchBotPackListAsync(
+        public async Task<IEnumerable<Pack>> FetchPackListsAsync(
             CancellationToken token)
         {
             var packList = new List<Pack>();
@@ -76,7 +78,7 @@ namespace HorribleSubsFetcher
 
             var tasks = botList.Select(async bot =>
             {
-                var packs = await FetchPackListAsync(bot, token);
+                var packs = await FetchBotPackListAsync(bot, token);
                 packList.AddRange(packs);
             });
 
@@ -91,7 +93,7 @@ namespace HorribleSubsFetcher
         /// <param name="bot">The bot.</param>
         /// <param name="token">The cancellation token which can be used to cancel the operation.</param>
         /// <returns>A list which contains all packs of the bot.</returns>
-        public async Task<IEnumerable<Pack>> FetchPackListAsync(
+        public async Task<IEnumerable<Pack>> FetchBotPackListAsync(
             string bot,
             CancellationToken token)
         {

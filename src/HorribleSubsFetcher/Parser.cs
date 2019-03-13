@@ -22,7 +22,7 @@ namespace HorribleSubsFetcher
                 token,
                 GetPackAsJson);
 
-            return packAsJson.Select(paj => JsonConvert.DeserializeObject<Pack>(paj));
+            return packAsJson.Select(JsonConvert.DeserializeObject<Pack>);
         }
 
         internal async Task<IEnumerable<string>> ParseBotsAsync(

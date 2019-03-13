@@ -11,7 +11,9 @@ namespace HorribleSubsFetcher.Samples.FetchBotPackList
             var fetcher = new Fetcher();
             var tokenSource = new CancellationTokenSource();
 
-            var packList = await fetcher.FetchBotPackListAsync(tokenSource.Token);
+            const string bot = "Ginpachi-Sensei";
+
+            var packList = await fetcher.FetchBotPackListAsync(bot, tokenSource.Token);
 
             foreach (var item in packList)
                 Console.WriteLine(item);

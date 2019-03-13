@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace HorribleSubsFetcher.Samples.FetchPackList
+namespace HorribleSubsFetcher.Samples.FetchPackLists
 {
     internal class Program
     {
@@ -11,9 +11,7 @@ namespace HorribleSubsFetcher.Samples.FetchPackList
             var fetcher = new Fetcher();
             var tokenSource = new CancellationTokenSource();
 
-            const string bot = "Ginpachi-Sensei";
-
-            var packList = await fetcher.FetchPackListAsync(bot, tokenSource.Token);
+            var packList = await fetcher.FetchPackListsAsync(tokenSource.Token);
 
             foreach (var item in packList)
                 Console.WriteLine(item);
