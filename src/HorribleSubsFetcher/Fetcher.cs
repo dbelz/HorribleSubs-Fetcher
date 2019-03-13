@@ -49,7 +49,7 @@ namespace HorribleSubsFetcher
         /// <param name="bot">The bot.</param>
         /// <param name="token">The cancellation token which can be used to cancel the operation.</param>
         /// <returns>A list which contains all matching packs.</returns>
-        public async Task<IEnumerable<Pack>> FindPacksAsync(
+        public async Task<IEnumerable<Pack>> FindBotPacksAsync(
             string term,
             string bot,
             CancellationToken token)
@@ -68,7 +68,7 @@ namespace HorribleSubsFetcher
         /// </summary>
         /// <param name="token">The cancellation token which can be used to cancel the operation.</param>
         /// <returns>A list which contains all packs.</returns>
-        public async Task<IEnumerable<Pack>> FetchPackListAsync(
+        public async Task<IEnumerable<Pack>> FetchBotPackListAsync(
             CancellationToken token)
         {
             var packList = new List<Pack>();

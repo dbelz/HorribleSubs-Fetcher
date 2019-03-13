@@ -11,7 +11,7 @@ namespace HorribleSubsFetcher.Samples.FetchBotPackList
             var fetcher = new Fetcher();
             var tokenSource = new CancellationTokenSource();
 
-            var packList = await fetcher.FetchPackListAsync(tokenSource.Token);
+            var packList = await fetcher.FetchBotPackListAsync(tokenSource.Token);
 
             foreach (var item in packList)
                 Console.WriteLine(item);
