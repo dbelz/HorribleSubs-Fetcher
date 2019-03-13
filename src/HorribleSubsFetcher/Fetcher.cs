@@ -84,6 +84,12 @@ namespace HorribleSubsFetcher
             return packList;
         }
 
+        /// <summary>
+        /// Fetches the pack list of a specific bot.
+        /// </summary>
+        /// <param name="bot">The bot.</param>
+        /// <param name="token">The cancellation token which can be used to cancel the operation.</param>
+        /// <returns>A list which contains all packs of the bot.</returns>
         public async Task<IEnumerable<Pack>> FetchPackListAsync(
             string bot,
             CancellationToken token)
