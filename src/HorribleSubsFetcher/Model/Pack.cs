@@ -1,14 +1,14 @@
 ﻿using Newtonsoft.Json;
 
-namespace HorribleSubsFetcher
+namespace HorribleSubsFetcher.Model
 {
-    public class PackEntry
+    public class Pack
     {
         [JsonProperty("b")]
         public string Bot { get; set; }
 
         [JsonProperty("n")]
-        public string Pack { get; set; }
+        public string Number { get; set; }
 
         [JsonProperty("s")]
         public string Size { get; set; }
@@ -18,7 +18,7 @@ namespace HorribleSubsFetcher
 
         public override string ToString()
         {
-            return $"/msg {Bot} xdcc send #{Pack}";
+            return $"/msg {Bot} xdcc send #{Number}";
         }
     }
 }
