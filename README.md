@@ -41,7 +41,7 @@ private static async Task Main()
 }
 ```
 
-You can find a sample solution here: 
+[Sample Solution](https://github.com/dbelz/Horrible-Subs-Fetcher/tree/master/samples/FetchBotList)
 
 ### Fetching the packlist of a bot
 ```csharp
@@ -61,7 +61,7 @@ private static async Task Main()
 }
 ```
 
-You can find a sample solution here: 
+[Sample Solution](https://github.com/dbelz/Horrible-Subs-Fetcher/tree/master/samples/FetchBotPackList) 
 
 ### Fetching all packlists
 ```csharp
@@ -79,7 +79,7 @@ private static async Task Main()
 }
 ```
 
-You can find a sample solution here: 
+[Sample Solution](https://github.com/dbelz/Horrible-Subs-Fetcher/tree/master/samples/FetchPackList) 
 
 ### Finding packs of a bot
 ```csharp
@@ -99,7 +99,7 @@ private static async Task Main()
 }
 ```
 
-You can find a sample solution here: 
+[Sample Solution](https://github.com/dbelz/Horrible-Subs-Fetcher/tree/master/samples/FindBotPacks)
 
 ### Finding packs
 ```csharp
@@ -117,7 +117,7 @@ private static async Task Main()
 }
 ```
 
-You can find a sample solution here: 
+[Sample Solution](https://github.com/dbelz/Horrible-Subs-Fetcher/tree/master/samples/FindPacks) 
 
 ### Pack ToString
 
