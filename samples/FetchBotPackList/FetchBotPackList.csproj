@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <AssemblyName>HorribleSubsFetcher.Samples.FetchBotPackList</AssemblyName>
+    <RootNamespace>HorribleSubsFetcher.Samples.FetchBotPackList</RootNamespace>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\HorribleSubsFetcher\HorribleSubsFetcher.csproj" />
+  </ItemGroup>
+
+</Project>
