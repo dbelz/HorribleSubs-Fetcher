@@ -14,34 +14,131 @@ This is a simple library which is able to search, fetch and parse the xdcc packl
 <sub>Built with ❤︎ by Daniel Belz</sub>
 </div><br>
 
-# How to use it?
-You can search for xdcc packs like this:
+* [Getting started](#getting-started)
+    * [Fetching all bots](#fetching-all-bots)
+    * [Fetching the packlist of a bot](#fetching-the-packlist-of-a-bot)
+    * [Fetching all packlists](#fetching-all-packlists)
+    * [Finding packs of a bot](#finding-packs-of-a-bot)
+    * [Finding packs](#finding-packs)
+    * [Pack ToString](#pack-tostring)
+
+<br>
+
+# Getting started
+### Fetching all bots
 ```csharp
-public async Task FindToradoraPacksAsync()
+private static async Task Main()
 {
     var fetcher = new Fetcher();
-    var cancellationTokenSource = new CancellationTokenSource();
+    var tokenSource = new CancellationTokenSource();
 
-    var packs = await fetcher.SearchPacklistAsync("Tokyo Ghoul", cancellationTokenSource.Token);
+    var bots = await fetcher.FetchBotListAsync(tokenSource.Token);
+
+    foreach (var bot in bots)
+        Console.WriteLine(bot);
+
+    Console.ReadLine();
 }
 ```
 
-The `PackEntry` class overrides the `ToString()` method. It returns a string which can be copy pasted in your favorite irc/xdcc client:
+You can find a sample solution here: 
+
+### Fetching the packlist of a bot
 ```csharp
-public async Task FindToradoraPacksAsync()
+private static async Task Main()
 {
     var fetcher = new Fetcher();
-    var cancellationTokenSource = new CancellationTokenSource();
+    var tokenSource = new CancellationTokenSource();
 
-    var packs = await fetcher.SearchPacklistAsync("Tokyo Ghoul", cancellationTokenSource.Token);
+    const string bot = "Ginpachi-Sensei";
 
-    var firstPack = packs.First();
+    var packList = await fetcher.FetchBotPackListAsync(bot, tokenSource.Token);
 
-    // returns: /msg $BOT$ xdcc send #$PACKNUMBER$
-    Console.WriteLine(firstPack);
+    foreach (var item in packList)
+        Console.WriteLine(item);
+
+    Console.ReadLine();
 }
 ```
 
+You can find a sample solution here: 
+
+### Fetching all packlists
+```csharp
+private static async Task Main()
+{
+    var fetcher = new Fetcher();
+    var tokenSource = new CancellationTokenSource();
+
+    var packList = await fetcher.FetchPackListsAsync(tokenSource.Token);
+
+    foreach (var item in packList)
+        Console.WriteLine(item);
+
+    Console.ReadLine();
+}
+```
+
+You can find a sample solution here: 
+
+### Finding packs of a bot
+```csharp
+private static async Task Main()
+{
+    var fetcher = new Fetcher();
+    var tokenSource = new CancellationTokenSource();
+
+    var bot = "Ginpachi-Sensei";
+
+    var packList = await fetcher.FindBotPacksAsync("Toradora", bot, tokenSource.Token);
+
+    foreach (var item in packList)
+        Console.WriteLine(item);
+
+    Console.ReadLine();
+}
+```
+
+You can find a sample solution here: 
+
+### Finding packs
+```csharp
+private static async Task Main()
+{
+    var fetcher = new Fetcher();
+    var tokenSource = new CancellationTokenSource();
+
+    var packList = await fetcher.FindPacksAsync("Toradora", tokenSource.Token);
+
+    foreach (var item in packList)
+        Console.WriteLine(item);
+
+    Console.ReadLine();
+}
+```
+
+You can find a sample solution here: 
+
+### Pack ToString
+
+The `Pack` class overrides the `ToString()` method. It returns a string which can be copy pasted in your favorite irc/xdcc client:
+```csharp
+private static async Task Main()
+{
+    var fetcher = new Fetcher();
+    var tokenSource = new CancellationTokenSource();
+
+    var packList = await fetcher.FetchPackListsAsync(tokenSource.Token);
+
+    foreach (var item in packList)
+    {
+        // returns: /msg $BOT$ xdcc send #$PACKNUMBER$
+        Console.WriteLine(item);
+    }
+
+    Console.ReadLine();
+}
+```
 
 ## Contributing
 
