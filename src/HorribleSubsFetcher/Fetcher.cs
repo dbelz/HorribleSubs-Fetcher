@@ -72,7 +72,7 @@ namespace HorribleSubsFetcher
             CancellationToken token)
         {
             var packList = new List<Pack>();
-            var botList = (await FetchBotsAsync(token)).ToList();
+            var botList = (await FetchBotListAsync(token)).ToList();
 
             var tasks = botList.Select(async bot =>
             {
@@ -108,7 +108,7 @@ namespace HorribleSubsFetcher
         /// </summary>
         /// <param name="token">The cancellation token which can be used to cancel the operation.</param>
         /// <returns>A list which contains all bot names.</returns>
-        public async Task<IEnumerable<string>> FetchBotsAsync(
+        public async Task<IEnumerable<string>> FetchBotListAsync(
             CancellationToken token)
         {
             var stream = await _http.GetStreamAsync(BASE_URL);
