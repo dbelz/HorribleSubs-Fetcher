@@ -2,8 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using HorribleSubsFetcher.Model;
 
 namespace HorribleSubsFetcher
 {
@@ -15,10 +17,12 @@ namespace HorribleSubsFetcher
             Stream stream,
             CancellationToken token)
         {
-            return await ReadStreamAsync(
+            var packAsJson = await ReadStreamAsync(
                 stream,
                 token,
-                ParsePack);
+                GetPackAsJson);
+
+            return packAsJson.Select(paj => JsonConvert.DeserializeObject<Pack>(paj));
         }
 
         internal async Task<IEnumerable<string>> ParseBotsAsync(
@@ -28,7 +32,7 @@ namespace HorribleSubsFetcher
             return await ReadStreamAsync(
                 stream,
                 token,
-                ParseBot);
+                GetBotName);
         }
 
         private static async Task<IEnumerable<T>> ReadStreamAsync<T>(
@@ -60,7 +64,7 @@ namespace HorribleSubsFetcher
             return result;
         }
 
-        private static Pack ParsePack(string input)
+        private static string GetPackAsJson(string input)
         {
             if (string.IsNullOrWhiteSpace(input))
                 return null;
@@ -75,10 +79,10 @@ namespace HorribleSubsFetcher
             if (json.EndsWith(";"))
                 json = json.Substring(0, json.Length - 1);
 
-            return JsonConvert.DeserializeObject<Pack>(json);
+            return json;
         }
 
-        private static string ParseBot(string input)
+        private static string GetBotName(string input)
         {
             if (string.IsNullOrWhiteSpace(input) || !input.Contains(BOT_LINE_INDICATOR))
                 return null;
