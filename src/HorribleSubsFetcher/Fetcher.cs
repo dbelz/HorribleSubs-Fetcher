@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HorribleSubsFetcher
 {
-    public class FetchApi : IDisposable
+    public class Fetcher : IDisposable
     {
         private const string BASE_URL = "https://xdcc.horriblesubs.info/";
         private const string SEARCH_IN_ALL_PACKLISTS_URL = "https://xdcc.horriblesubs.info/search.php?t={0}";
@@ -17,7 +17,7 @@ namespace HorribleSubsFetcher
         private readonly HttpClient _http;
         private readonly Parser _parser;
 
-        public FetchApi(HttpClient customHttpClient = null)
+        public Fetcher(HttpClient customHttpClient = null)
         {
             _http = customHttpClient ?? new HttpClient();
             _parser = new Parser();

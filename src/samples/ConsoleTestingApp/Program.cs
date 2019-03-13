@@ -11,8 +11,8 @@ namespace ConsoleTestingApp
     {
         static async Task Main(string[] args)
         {
-            var api = new FetchApi();
-
+            var api = new Fetcher();
+            
             var botList = await api.FetchBotsAsync(CancellationToken.None);
             var result = await api.FindPacksAsync("Tokyo Ghoul", botList.First(), CancellationToken.None);
             Console.WriteLine("Hello World!");
