@@ -29,7 +29,9 @@ This is a simple library which is able to search, fetch and parse the xdcc packl
 ```csharp
 private static async Task Main()
 {
-    var fetcher = new Fetcher();
+	var httpClient = new HttpClient();
+
+    var fetcher = new Fetcher(httpClient);
     var tokenSource = new CancellationTokenSource();
 
     var bots = await fetcher.FetchBotListAsync(tokenSource.Token);
@@ -47,7 +49,9 @@ private static async Task Main()
 ```csharp
 private static async Task Main()
 {
-    var fetcher = new Fetcher();
+	var httpClient = new HttpClient();
+
+    var fetcher = new Fetcher(httpClient);
     var tokenSource = new CancellationTokenSource();
 
     const string bot = "Ginpachi-Sensei";
@@ -67,7 +71,9 @@ private static async Task Main()
 ```csharp
 private static async Task Main()
 {
-    var fetcher = new Fetcher();
+	var httpClient = new HttpClient();
+
+    var fetcher = new Fetcher(httpClient);
     var tokenSource = new CancellationTokenSource();
 
     var packList = await fetcher.FetchPackListsAsync(tokenSource.Token);
@@ -85,8 +91,10 @@ private static async Task Main()
 ```csharp
 private static async Task Main()
 {
-    var fetcher = new Fetcher();
-    var tokenSource = new CancellationTokenSource();
+	var httpClient = new HttpClient();
+
+    var fetcher = new Fetcher(httpClient);
+	var tokenSource = new CancellationTokenSource();
 
     var bot = "Ginpachi-Sensei";
 
@@ -105,8 +113,10 @@ private static async Task Main()
 ```csharp
 private static async Task Main()
 {
-    var fetcher = new Fetcher();
-    var tokenSource = new CancellationTokenSource();
+	var httpClient = new HttpClient();
+
+    var fetcher = new Fetcher(httpClient);
+	var tokenSource = new CancellationTokenSource();
 
     var packList = await fetcher.FindPacksAsync("Toradora", tokenSource.Token);
 
@@ -125,8 +135,10 @@ The `Pack` class overrides the `ToString()` method. It returns a string which ca
 ```csharp
 private static async Task Main()
 {
-    var fetcher = new Fetcher();
-    var tokenSource = new CancellationTokenSource();
+	var httpClient = new HttpClient();
+
+    var fetcher = new Fetcher(httpClient);
+	var tokenSource = new CancellationTokenSource();
 
     var packList = await fetcher.FetchPackListsAsync(tokenSource.Token);
 
