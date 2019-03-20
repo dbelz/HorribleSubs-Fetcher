@@ -18,9 +18,9 @@ namespace HorribleSubsFetcher
         private readonly HttpClient _http;
         private readonly Parser _parser;
 
-        public Fetcher(HttpClient customHttpClient = null)
+        public Fetcher(HttpClient httpClient)
         {
-            _http = customHttpClient ?? new HttpClient();
+            _http = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
             _parser = new Parser();
         }
 

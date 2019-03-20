@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -8,7 +9,9 @@ namespace HorribleSubsFetcher.Samples.FetchBotList
     {
         private static async Task Main()
         {
-            var fetcher = new Fetcher();
+            var httpClient = new HttpClient();
+
+            var fetcher = new Fetcher(httpClient);
             var tokenSource = new CancellationTokenSource();
 
             var bots = await fetcher.FetchBotListAsync(tokenSource.Token);
