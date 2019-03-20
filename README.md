@@ -29,7 +29,7 @@ This is a simple library which is able to search, fetch and parse the xdcc packl
 ```csharp
 private static async Task Main()
 {
-	var httpClient = new HttpClient();
+    var httpClient = new HttpClient();
 
     var fetcher = new Fetcher(httpClient);
     var tokenSource = new CancellationTokenSource();
@@ -49,7 +49,7 @@ private static async Task Main()
 ```csharp
 private static async Task Main()
 {
-	var httpClient = new HttpClient();
+    var httpClient = new HttpClient();
 
     var fetcher = new Fetcher(httpClient);
     var tokenSource = new CancellationTokenSource();
@@ -71,7 +71,7 @@ private static async Task Main()
 ```csharp
 private static async Task Main()
 {
-	var httpClient = new HttpClient();
+    var httpClient = new HttpClient();
 
     var fetcher = new Fetcher(httpClient);
     var tokenSource = new CancellationTokenSource();
@@ -91,7 +91,7 @@ private static async Task Main()
 ```csharp
 private static async Task Main()
 {
-	var httpClient = new HttpClient();
+    var httpClient = new HttpClient();
 
     var fetcher = new Fetcher(httpClient);
 	var tokenSource = new CancellationTokenSource();
@@ -113,7 +113,7 @@ private static async Task Main()
 ```csharp
 private static async Task Main()
 {
-	var httpClient = new HttpClient();
+    var httpClient = new HttpClient();
 
     var fetcher = new Fetcher(httpClient);
 	var tokenSource = new CancellationTokenSource();
@@ -135,7 +135,7 @@ The `Pack` class overrides the `ToString()` method. It returns a string which ca
 ```csharp
 private static async Task Main()
 {
-	var httpClient = new HttpClient();
+    var httpClient = new HttpClient();
 
     var fetcher = new Fetcher(httpClient);
 	var tokenSource = new CancellationTokenSource();
