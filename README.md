@@ -4,10 +4,10 @@
 [![forthebadge](https://forthebadge.com/images/badges/made-with-c-sharp.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/built-with-grammas-recipe.svg)](https://forthebadge.com)
 
-[![GitHub license](https://img.shields.io/github/license/dbelz/HorribleSubs-Fetcher.svg?longCache=true&style=flat-square)](https://github.com/dbelz/HorribleSubs-Fetcher/blob/master/LICENSE.md)
+[![GitHub license](https://img.shields.io/github/license/LegendaryB/HorribleSubs-Fetcher.svg?longCache=true&style=flat-square)](https://github.com/LegendaryB/HorribleSubs-Fetcher/blob/master/LICENSE.md)
 [![Nuget](https://img.shields.io/nuget/v/HorribleSubsFetcher.svg?style=flat-square)](https://www.nuget.org/packages/HorribleSubsFetcher/)
-[![GitHub last commit](https://img.shields.io/github/last-commit/dbelz/HorribleSubs-Fetcher.svg?longCache=true&style=flat-square)](https://github.com/dbelz/HorribleSubs-Fetcher)
-[![GitHub issues](https://img.shields.io/github/issues/dbelz/HorribleSubs-Fetcher.svg?longCache=true&style=flat-square)](https://github.com/dbelz/HorribleSubs-Fetcher/issues)
+[![GitHub last commit](https://img.shields.io/github/last-commit/LegendaryB/HorribleSubs-Fetcher.svg?longCache=true&style=flat-square)](https://github.com/LegendaryB/HorribleSubs-Fetcher)
+[![GitHub issues](https://img.shields.io/github/issues/LegendaryB/HorribleSubs-Fetcher.svg?longCache=true&style=flat-square)](https://github.com/LegendaryB/HorribleSubs-Fetcher/issues)
 
 This is a simple library which is able to search, fetch and parse the xdcc packlist of https://xdcc.horriblesubs.info/
 
@@ -43,7 +43,7 @@ private static async Task Main()
 }
 ```
 
-[Sample Solution](https://github.com/dbelz/Horrible-Subs-Fetcher/tree/master/samples/FetchBotList)
+[Sample Solution](https://github.com/LegendaryB/Horrible-Subs-Fetcher/tree/master/samples/FetchBotList)
 
 ### Fetching the packlist of a bot
 ```csharp
@@ -65,7 +65,7 @@ private static async Task Main()
 }
 ```
 
-[Sample Solution](https://github.com/dbelz/Horrible-Subs-Fetcher/tree/master/samples/FetchBotPackList) 
+[Sample Solution](https://github.com/LegendaryB/Horrible-Subs-Fetcher/tree/master/samples/FetchBotPackList) 
 
 ### Fetching all packlists
 ```csharp
@@ -85,7 +85,7 @@ private static async Task Main()
 }
 ```
 
-[Sample Solution](https://github.com/dbelz/Horrible-Subs-Fetcher/tree/master/samples/FetchPackList) 
+[Sample Solution](https://github.com/LegendaryB/Horrible-Subs-Fetcher/tree/master/samples/FetchPackList) 
 
 ### Finding packs of a bot
 ```csharp
@@ -107,7 +107,7 @@ private static async Task Main()
 }
 ```
 
-[Sample Solution](https://github.com/dbelz/Horrible-Subs-Fetcher/tree/master/samples/FindBotPacks)
+[Sample Solution](https://github.com/LegendaryB/Horrible-Subs-Fetcher/tree/master/samples/FindBotPacks)
 
 ### Finding packs
 ```csharp
@@ -127,7 +127,7 @@ private static async Task Main()
 }
 ```
 
-[Sample Solution](https://github.com/dbelz/Horrible-Subs-Fetcher/tree/master/samples/FindPacks) 
+[Sample Solution](https://github.com/LegendaryB/Horrible-Subs-Fetcher/tree/master/samples/FindPacks) 
 
 ### Pack ToString
 
